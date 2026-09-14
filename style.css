@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+
+:root {
+  --preto: #080808;
+  --pretoSuave: #121212;
+  --cinzaEscuro: #1c1c1c;
+  --cinza: #6d6d6d;
+  --cinzaClaro: #eeeeee;
+  --branco: #ffffff;
+  --vermelho: #d9062f;
+  --vermelhoEscuro: #a80323;
+  --largura: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--preto);
+  color: var(--branco);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: min(var(--largura), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.topo {
+  min-height: 100vh;
+  position: relative;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(217, 6, 47, 0.20), transparent 25%),
+    linear-gradient(135deg, #080808 0%, #0e0e0e 55%, #151515 100%);
+  overflow: hidden;
+}
+
+.topo::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: var(--vermelho);
+  right: -190px;
+  bottom: -120px;
+  transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+.navegacao {
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+}
+
+.marca {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.marcaPonto {
+  color: var(--vermelho);
+  font-size: 1.8rem;
+}
+
+.menuLinks {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.menuLinks a {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #d7d7d7;
+  transition: color 0.25s ease;
+}
+
+.menuLinks a:hover,
+.menuLinks a.ativo {
+  color: var(--vermelho);
+}
+
+.menuBotao {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menuBotao span {
+  width: 24px;
+  height: 2px;
+  background: var(--branco);
+}
+
+.hero {
+  min-height: calc(100vh - 86px);
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 64px;
+  align-items: center;
+  padding: 60px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.rotulo {
+  color: var(--vermelho);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.rotulo.escuro {
+  color: var(--vermelho);
+}
+
+.hero h1,
+.secao h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.hero h1 {
+  font-size: clamp(3.4rem, 7vw, 6.7rem);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+  max-width: 760px;
+}
+
+.hero h1 span {
+  color: var(--vermelho);
+}
+
+.subtitulo {
+  max-width: 760px;
+  margin-top: 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.heroDescricao {
+  max-width: 680px;
+  margin-top: 18px;
+  color: #bcbcbc;
+  font-size: 1rem;
+}
+
+.heroAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.botao {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.botaoPrincipal {
+  background: var(--vermelho);
+  color: var(--branco);
+}
+
+.botaoPrincipal:hover {
+  background: #f20b3c;
+}
+
+.botaoSecundario {
+  border: 1px solid #3d3d3d;
+  color: var(--branco);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.botaoSecundario:hover {
+  border-color: var(--vermelho);
+}
+
+.heroDados {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  color: #969696;
+  font-size: 0.88rem;
+}
+
+.heroImagem {
+  position: relative;
+}
+
+.fotoMoldura {
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  border: 1px solid #252525;
+}
+
+.fotoMoldura::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.fotoMoldura img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.secao {
+  padding: 110px 0;
+  scroll-margin-top: 70px;
+}
+
+.secaoClara {
+  background: #f5f5f3;
+  color: #111111;
+}
+
+.secaoEscura {
+  background: var(--pretoSuave);
+  color: var(--branco);
+}
+
+.secaoVermelha {
+  background: var(--vermelho);
+  color: var(--branco);
+}
+
+.secaoTitulo h2,
+.secaoCabecalho h2,
+.contato h2 {
+  font-size: clamp(2.2rem, 4vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.secaoTitulo > p:last-child {
+  margin-top: 22px;
+  max-width: 540px;
+}
+
+.secaoCabecalho {
+  margin-bottom: 50px;
+}
+
+.gradeSobre {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.sobreTexto > p {
+  font-size: 1.04rem;
+  color: #333333;
+  margin-bottom: 18px;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 44px;
+}
+
+.numeros article {
+  padding-top: 20px;
+  border-top: 2px solid #111111;
+}
+
+.numeros strong {
+  display: block;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: -0.05em;
+  color: var(--vermelho);
+}
+
+.numeros span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #5f5f5f;
+}
+
+.linhaTempo {
+  border-top: 1px solid #2e2e2e;
+}
+
+.experienciaCard {
+  display: grid;
+  grid-template-columns: 0.36fr 1fr;
+  gap: 52px;
+  padding: 48px 0;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.experienciaData {
+  color: #8b8b8b;
+  font-size: 0.88rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #3d3d3d;
+  border-radius: 999px;
+  color: #cfcfcf;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.experienciaConteudo h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.experienciaConteudo h4 {
+  margin-top: 4px;
+  color: var(--vermelho);
+  font-size: 1rem;
+}
+
+.experienciaConteudo p {
+  margin-top: 16px;
+  color: #a9a9a9;
+  max-width: 760px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.cardClaro {
+  min-height: 230px;
+  padding: 26px;
+  background: var(--branco);
+  border: 1px solid #dedede;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cardClaro:hover {
+  transform: translateY(-5px);
+  border-color: var(--vermelho);
+}
+
+.cardNumero {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  color: #d5d5d5;
+}
+
+.cardClaro p {
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.cardClaro h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.docenciaGrade {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.secaoVermelha .rotulo {
+  color: #2a0010;
+}
+
+.secaoVermelha .secaoTitulo p:last-child {
+  color: #ffdce4;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chips span {
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.10);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.livrosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.livroCard {
+  min-height: 260px;
+  padding: 26px;
+  background:
+    linear-gradient(145deg, rgba(217, 6, 47, 0.16), transparent 55%),
+    #191919;
+  border: 1px solid #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.livroCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--vermelho);
+}
+
+.livroCard span {
+  color: var(--vermelho);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.livroCard h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.competenciasGrade {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.competenciasLista {
+  border-top: 1px solid #c9c9c9;
+}
+
+.competenciasLista div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.competenciasLista span {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.competenciasLista strong {
+  color: var(--vermelho);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contato {
+  background: linear-gradient(135deg, #d9062f 0%, #b10327 100%);
+}
+
+.contatoGrade {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+}
+
+.contato .rotulo {
+  color: #250008;
+}
+
+.contatoTexto > p:nth-of-type(2) {
+  margin-top: 22px;
+  color: #ffe0e6;
+  max-width: 480px;
+}
+
+.botaoClaro {
+  background: var(--branco);
+  color: #111111;
+  margin-top: 28px;
+}
+
+.contatoLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.contatoLinks a {
+  min-height: 110px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.contatoLinks a:hover {
+  background: rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px);
+}
+
+.contatoLinks span {
+  color: #ffd0da;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+.contatoLinks strong {
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+footer {
+  background: #050505;
+  color: #777777;
+  padding: 25px 0;
+  border-top: 1px solid #171717;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.8rem;
+}
+
+.revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .menuBotao {
+    display: flex;
+  }
+
+  .menuLinks {
+    position: absolute;
+    top: 76px;
+    right: 0;
+    width: min(360px, 100%);
+    padding: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    background: #101010;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .menuLinks.aberto {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .menuLinks a {
+    padding: 10px 8px;
+  }
+
+  .hero,
+  .gradeSobre,
+  .docenciaGrade,
+  .competenciasGrade,
+  .contatoGrade {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .fotoMoldura {
+    margin: 0;
+    max-width: 560px;
+  }
+
+  .cardsGrid,
+  .livrosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contatoLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(var(--largura), calc(100% - 30px));
+  }
+
+  .navegacao {
+    height: 74px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 42px 0 72px;
+    gap: 42px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 16vw, 4.4rem);
+  }
+
+  .subtitulo {
+    font-size: 0.94rem;
+  }
+
+  .heroAcoes {
+    flex-direction: column;
+  }
+
+  .botao {
+    width: 100%;
+  }
+
+  .secao {
+    padding: 80px 0;
+  }
+
+  .gradeSobre,
+  .docenciaGrade,
+  .competenciasGrade,
+  .contatoGrade {
+    gap: 44px;
+  }
+
+  .numeros,
+  .cardsGrid,
+  .livrosGrid,
+  .contatoLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .experienciaCard {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .competenciasLista div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rodape {
+    flex-direction: column;
+  }
+}
